@@ -1,0 +1,1128 @@
+/* Start Global Rules */
+
+:root {
+    --main-color: #000;
+    --second-color: #fff;
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*::selection {
+    color: #fff;
+    background-color: var(--main-color);
+}
+
+
+/* End Global Rules */
+
+
+/* Start Header */
+
+header {
+    background-color: var(--main-color);
+    height: 75px;
+    box-shadow: 0 1px 10px 0 rgba(255, 255, 255, 0.2);
+    z-index: 2;
+    position: relative;
+}
+
+header div.container {}
+
+header div.container nav {
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div.container nav img.main-logo {
+    width: 70px;
+}
+
+header div.container div.links div.burger-menu {
+    width: 30px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+header div.container div.links div.burger-menu span {
+    width: 100%;
+    height: 2px;
+    margin-bottom: 8px;
+    background-color: #fff;
+    transition: 0.6s;
+}
+
+header div.container div.links div.burger-menu span:nth-child(2) {
+    width: 50%;
+}
+
+header div.container div.links div.burger-menu:hover span:nth-child(2) {
+    width: 100%;
+}
+
+header div.container div.links ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+header div.container div.links ul li {
+    height: 75px;
+    line-height: 75px;
+    transition: 0.6s;
+    padding: 0 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 0;
+    font-weight: 500;
+    transition: 0.6s;
+}
+
+header div.container div.links ul li:hover a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+header div.container div.links ul li::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    left: -150%;
+    transform: translateX(-50%);
+    top: 0;
+    transition: 0.6s;
+    z-index: -1;
+}
+
+header div.container div.links ul li::after {
+    content: '';
+    width: calc(100% + 40px);
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    left: -200%;
+    top: 0;
+    transition: 0.9s;
+    z-index: -1;
+}
+
+header div.container div.links ul li:hover:before {
+    left: 50%;
+}
+
+header div.container div.links ul li:hover:after {
+    left: 0;
+}
+
+header div.container div.links ul li a {
+    text-decoration: none;
+    transition: 0.6s;
+    color: #fff;
+    font-family: 'Lato', sans-serif !important;
+}
+
+@media (max-width: 767px) {
+    header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow: none;
+    }
+    header div.container div.links div.burger-menu {
+        display: flex;
+    }
+    header div.container div.links ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        z-index: 2;
+        top: -500%;
+        left: 0;
+        background-color: #000;
+        transition: 0.4s;
+    }
+    header div.container div.links ul li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    }
+    header div.container div.links ul li:last-child {
+        border-bottom: none;
+    }
+    header div.container div.links ul li:hover {
+        padding-right: 10px;
+    }
+    header div.container div.links ul li::after {
+        display: none;
+    }
+}
+
+
+/* End Header */
+
+
+/* Start Landing Page */
+
+div.landing-page {
+    height: 800px;
+    background-color: #b3b3b3;
+    position: relative;
+    background-image: url('../imgs/landing-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+
+div.landing-page::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+div.landing-page div.container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div.landing-page div.container h1 {
+    width: fit-content;
+    font-size: 60px;
+    text-transform: uppercase;
+    text-align: center;
+    overflow: hidden;
+    margin: 30px auto;
+    padding-right: 10px;
+    border-right: 1px solid transparent;
+    white-space: nowrap;
+    line-height: 1.6;
+}
+
+div.landing-page div.container h2 {
+    width: fit-content;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 20px;
+    padding-bottom: 30px;
+    /* animation: slideRight 2s both; */
+    font-weight: 300;
+    margin: 30px auto;
+    position: relative;
+}
+
+div.landing-page div.container h2::before {
+    content: '';
+    width: 40%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+div.landing-page div.container button {
+    color: #fff;
+    border-color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+@media (max-width: 767px) {
+    div.landing-page div.container h1 {
+        font-size: 25px;
+        margin-left: 15px;
+    }
+}
+
+
+/* End Landing Page */
+
+
+/* Start Description */
+
+section.description {
+    padding: 40px 0;
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+section.description div.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.description div.container p {
+    letter-spacing: 5px;
+    margin: 0;
+    line-height: 1.6;
+    text-align: center;
+}
+
+
+/* End Description */
+
+
+/* Start Who Ami ? */
+
+section.who-ami {
+    height: 600px;
+}
+
+section.who-ami div.container {
+    display: flex;
+    justify-content: center;
+}
+
+section.who-ami div.container div.info {
+    width: 50%;
+    padding: 50px;
+}
+
+section.who-ami div.container div.info h3 {
+    font-weight: bold;
+}
+
+section.who-ami div.container div.info h5 {
+    width: fit-content;
+    color: #d2d2d2;
+    margin: 30px 0;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+section.who-ami div.container div.info h5::before {
+    content: '';
+    width: 15%;
+    height: 1px;
+    background-color: var(--main-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+section.who-ami div.container div.info p {
+    line-height: 1.6;
+    font-family: 'Lato', sans-serif;
+    color: #777777;
+}
+
+section.who-ami div.container div.info ul {
+    padding: 0;
+    margin: 0;
+    list-style-position: inside;
+}
+
+section.who-ami div.container div.info ul li {
+    margin-bottom: 15px;
+}
+
+section.who-ami div.container div.info button {
+    margin-left: 0;
+}
+
+section.who-ami div.container div.info h4 section.who-ami div.container div.img {
+    background-color: #b3b3b3;
+}
+
+section.who-ami div.container div.img {
+    position: relative;
+    height: 600px;
+}
+
+section.who-ami div.container div.img::before {
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+section.who-ami div.container div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(0.5);
+    position: relative;
+    z-index: -1;
+}
+
+@media (max-width: 767px) {
+    section.who-ami {
+        height: 700px;
+    }
+}
+
+@media (max-width: 992px) {
+    section.who-ami div.container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    section.who-ami div.container div {
+        width: 100% !important;
+        padding: 50px !important;
+    }
+    section.who-ami div.container div.img {
+        display: none;
+    }
+    section.who-ami div.container div.info button {
+        margin-left: auto;
+    }
+}
+
+
+/* End Who Ami ? */
+
+
+/* Start Video  */
+
+div.video-present {
+    width: 100%;
+    height: 500px;
+    background-color: var(--main-color);
+    color: #fff;
+    position: relative;
+}
+
+div.video-present div.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.video-present div.container button.play {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: block;
+    border: none;
+    cursor: pointer;
+    margin: 15px auto;
+}
+
+
+/* End Video  */
+
+
+/* Start Portfolio */
+
+section.portfolio {
+    padding: 50px 0;
+    text-align: center;
+}
+
+section.portfoliodiv.container h3 {
+    font-weight: bold;
+}
+
+section.portfolio div.container h5 {
+    width: fit-content;
+    color: #777777;
+    margin: 15px auto;
+    padding-bottom: 15px;
+    font-size: 16px;
+    font-weight: 300;
+    position: relative;
+}
+
+section.portfolio div.container h5::before {
+    content: '';
+    width: 70%;
+    height: 1px;
+    background-color: var(--main-color);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+section.portfolio div.container div.works {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-gap: 30px;
+    margin: 100px 0;
+}
+
+section.portfolio div.container div.works div {
+    height: 300px;
+    background-color: #b3b3b3;
+    overflow: hidden;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    transition: 0.6s;
+}
+
+section.portfolio div.container div.works div:hover {
+    transform: translateY(-20px);
+}
+
+section.portfolio div.container div.works div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* End Portfolio */
+
+
+/* Start Skills */
+
+div.skills {
+    padding: 50px 0;
+    text-align: center;
+}
+
+div.skills div.container h3 {
+    font-weight: bold;
+}
+
+div.skills div.container h5 {
+    width: fit-content;
+    color: #777777;
+    margin: 15px auto;
+    padding-bottom: 15px;
+    font-size: 16px;
+    font-weight: 300;
+    position: relative;
+}
+
+div.skills div.container h5::before {
+    content: '';
+    width: 70%;
+    height: 1px;
+    background-color: var(--main-color);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+div.skills div.container div.skill {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin: 100px 0;
+}
+
+div.skills div.container div.skill div.web,
+div.skills div.container div.skill div.other {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 40px 0;
+}
+
+div.skills div.container div.skill div.web div,
+div.skills div.container div.skill div.other div {
+    width: 100%;
+    height: 40px;
+    background-color: #000;
+    position: relative;
+}
+
+div.skills div.container div.skill div.web div.html::before {
+    content: 'HTML';
+    position: absolute;
+    top: -30px;
+    left: 0;
+}
+
+div.skills div.container div.skill div.web div.html::after {
+    content: '80%';
+    width: 20%;
+    height: 100%;
+    background-color: #b3b3b3;
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 40px;
+}
+
+div.skills div.container div.skill div.web div.css::before {
+    content: 'CSS';
+    position: absolute;
+    top: -30px;
+    left: 0;
+}
+
+div.skills div.container div.skill div.web div.css::after {
+    content: '90%';
+    width: 10%;
+    height: 100%;
+    background-color: #b3b3b3;
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 40px;
+}
+
+div.skills div.container div.skill div.web div.js::before {
+    content: 'JAVASCRIPT';
+    position: absolute;
+    top: -30px;
+    left: 0;
+}
+
+div.skills div.container div.skill div.web div.js::after {
+    content: '85%';
+    width: 15%;
+    height: 100%;
+    background-color: #b3b3b3;
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 40px;
+}
+
+div.skills div.container div.skill div.web div.php::before {
+    content: 'PHP';
+    position: absolute;
+    top: -30px;
+    left: 0;
+}
+
+div.skills div.container div.skill div.web div.php::after {
+    content: '70%';
+    width: 30%;
+    height: 100%;
+    background-color: #b3b3b3;
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 40px;
+}
+
+div.skills div.container div.skill div.web div.bootstrap::before {
+    content: 'BOOTSTRAP';
+    position: absolute;
+    top: -30px;
+    left: 0;
+}
+
+div.skills div.container div.skill div.web div.bootstrap::after {
+    content: '75%';
+    width: 25%;
+    height: 100%;
+    background-color: #b3b3b3;
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 40px;
+}
+
+div.skills div.container div.skill div.other div.java::before {
+    content: 'JAVA';
+    position: absolute;
+    top: -30px;
+    left: 0;
+}
+
+div.skills div.container div.skill div.other div.java::after {
+    content: '70%';
+    width: 30%;
+    height: 100%;
+    background-color: #b3b3b3;
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 40px;
+}
+
+div.skills div.container div.skill div.other div.cpp::before {
+    content: 'C++';
+    position: absolute;
+    top: -30px;
+    left: 0;
+}
+
+div.skills div.container div.skill div.other div.cpp::after {
+    content: '65%';
+    width: 45%;
+    height: 100%;
+    background-color: #b3b3b3;
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 40px;
+}
+
+div.skills div.container div.skill div.other div.c::before {
+    content: 'C';
+    position: absolute;
+    top: -30px;
+    left: 0;
+}
+
+div.skills div.container div.skill div.other div.c::after {
+    content: '50%';
+    width: 50%;
+    height: 100%;
+    background-color: #b3b3b3;
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 40px;
+}
+
+div.skills div.container div.skill div.other div.python::before {
+    content: 'PYTHON';
+    position: absolute;
+    top: -30px;
+    left: 0;
+}
+
+div.skills div.container div.skill div.other div.python::after {
+    content: '60%';
+    width: 40%;
+    height: 100%;
+    background-color: #b3b3b3;
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 40px;
+}
+
+div.skills div.container div.skill div.other div.pascal::before {
+    content: 'PASCAL';
+    position: absolute;
+    top: -30px;
+    left: 0;
+}
+
+div.skills div.container div.skill div.other div.pascal::after {
+    content: '40%';
+    width: 60%;
+    height: 100%;
+    background-color: #b3b3b3;
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 40px;
+}
+
+@media (max-width: 767px) {
+    div.skills div.container div.skill {
+        grid-template-columns: 1fr;
+        grid-gap: 50px;
+    }
+}
+
+
+/* End Skills */
+
+
+/* Start Testomnials */
+
+section.testmonials {
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+    padding: 30px 0;
+}
+
+section.testmonials div.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section.testmonials div.container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    margin: 15px auto;
+}
+
+section.testmonials div.container p {
+    width: 70%;
+    margin: 15px auto;
+    line-height: 1.6;
+}
+
+section.testmonials div.container h5 {
+    margin: 15px auto;
+}
+
+
+/* End Testomnials */
+
+
+/* Start My Team  */
+
+div.my-team {
+    padding: 50px 0;
+    text-align: center;
+}
+
+div.my-team div.container h3 {
+    font-weight: bold;
+}
+
+div.my-team div.container h5 {
+    width: fit-content;
+    color: #777777;
+    margin: 15px auto;
+    padding-bottom: 15px;
+    font-size: 16px;
+    font-weight: 300;
+    position: relative;
+}
+
+div.my-team div.container h5::before {
+    content: '';
+    width: 70%;
+    height: 1px;
+    background-color: var(--main-color);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+div.my-team div.container div.persons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+    margin: 100px auto;
+}
+
+div.my-team div.container div.persons div {
+    height: 350px;
+    background-color: #b3b3b3;
+    position: relative;
+    cursor: pointer;
+}
+
+div.my-team div.container div.persons div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    filter: grayscale(1);
+    transition: 0.6s;
+}
+
+div.my-team div.container div.persons div:hover img {
+    filter: grayscale(0);
+}
+
+div.my-team div.container div.persons div span.info {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+div.my-team div.container div.persons div span.info h4 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+div.my-team div.container div.persons div span.info p {
+    margin-bottom: 0;
+    font-weight: 300;
+}
+
+
+/* End My Team  */
+
+
+/* Start Services */
+
+div.services {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+}
+
+div.services div.container h3 {
+    font-weight: bold;
+}
+
+div.services div.container h5 {
+    width: fit-content;
+    color: #777777;
+    margin: 15px auto;
+    padding-bottom: 15px;
+    font-size: 16px;
+    font-weight: 300;
+    position: relative;
+}
+
+div.services div.container h5::before {
+    content: '';
+    width: 70%;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+div.services div.container div.service {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px;
+    margin: 100px auto;
+}
+
+div.services div.container div.service div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.services div.container div.service div i {
+    font-size: 40px;
+    margin: 30px auto;
+}
+
+div.services div.container div.service div h4 {
+    font-size: 20px;
+    margin: 20px auto;
+}
+
+div.services div.container div.service div p {
+    color: #777777;
+    line-height: 1.6;
+}
+
+
+/* End Services  */
+
+
+/* Start Contact  */
+
+div.contact-us {
+    padding: 50px 0;
+    text-align: center;
+}
+
+div.contact-us div.container h3 {
+    font-weight: bold;
+}
+
+div.contact-us div.container h5 {
+    width: fit-content;
+    color: #777777;
+    margin: 15px auto;
+    padding-bottom: 15px;
+    font-size: 16px;
+    font-weight: 300;
+    position: relative;
+}
+
+div.contact-us div.container form {
+    margin: 100px 0;
+}
+
+div.contact-us div.container h5::before {
+    content: '';
+    width: 70%;
+    height: 1px;
+    background-color: var(--main-color);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+div.contact-us div.container form input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #000;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+div.contact-us div.container form input[type=submit] {
+    background-color: #000 !important;
+    color: #fff;
+    height: 50px;
+}
+
+div.contact-us div.container form input:focus,
+div.contact-us div.container form textarea:focus {
+    border: none;
+}
+
+div.contact-us div.container form textarea {
+    width: 100%;
+    height: 100px;
+    border: 1px solid #000;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+
+/* End Contact  */
+
+
+/* Start Footer */
+
+footer {
+    padding: 30px 0;
+    background-color: #000;
+}
+
+footer div.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer div.container div.social-media {
+    margin: 30px 0;
+}
+
+footer div.container a {
+    color: #fff;
+    margin: 0 15px;
+    font-size: 25px;
+}
+
+footer div.container img {
+    width: 80px;
+}
+
+footer div.container p {
+    color: #fff;
+}
+
+
+/* End Footer */
+
+
+/* Start Animation */
+
+@keyframes slideRight {
+    from {
+        margin-left: -9999px;
+    }
+    to {
+        margin-left: auto;
+    }
+}
+
+@keyframes typer {
+    from {
+        width: 0;
+    }
+    to {
+        width: 783px;
+    }
+}
+
+@keyframes flashing {
+    from {
+        border-right-color: #fff;
+    }
+    from {
+        border-right-color: rgba(255, 255, 255, 0.6);
+    }
+}
+
+@keyframes typerBack {
+    from {
+        width: attr();
+    }
+    to {
+        width: 0;
+    }
+}
+
+
+/* End Animation */
+
+
+/* Start My Framwork */
+
+.special-button {
+    width: fit-content;
+    padding: 10px 20px;
+    border: 1px solid #000;
+    color: var(--main-color);
+    display: block;
+    background-color: transparent;
+    margin: 30px auto;
+    transition: 0.6s;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.special-button:hover {
+    color: #fff;
+    border-color: #fff;
+}
+
+.special-button::before {
+    content: '';
+    width: 50%;
+    height: 100%;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transition: 0.6s;
+    z-index: -1;
+}
+
+.special-button:hover::before {
+    left: 0;
+}
+
+.special-button::after {
+    content: '';
+    width: 50%;
+    height: 100%;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    transition: 0.6s;
+    z-index: -1;
+}
+
+.special-button:hover::after {
+    right: 0;
+}
+
+
+/* End My Framwork */
